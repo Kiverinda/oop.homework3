@@ -6,12 +6,21 @@ namespace Learning.oop.homework3
     {
         static void Main(string[] args)
         {
-            BankAccount bankAccountOne = new BankAccount();
-            BankAccount bankAccountTwo = new BankAccount();
-            bankAccountTwo.AccountBalance = 1000;
-            bankAccountOne.Transaction(bankAccountTwo, 300);
+            Console.WriteLine("Введите произвольную строку");
+            string str = Console.ReadLine();
+            Console.WriteLine(ReverseString(str));
+        }
 
-            Console.WriteLine($"bankAccountOne.AccountBalance = { bankAccountOne.AccountBalance }; bankAccountTwo = {bankAccountTwo.AccountBalance}");
+        private static string ReverseString(string str)
+        {
+            string result = "";
+
+            for(int i = 0; i < str.Length; i++)
+            {
+                result += str[str.Length - i - 1];
+            }
+
+            return result;
         }
     }
 }
